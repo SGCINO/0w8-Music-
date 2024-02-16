@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>confirm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnfic-popup.js.min.css">
+    <link rel="stylesheet" href="https://cdnsjs.cloudflare.com/ajax/libs/font-awesome.5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="StyleSheet1.css">
+    <script src="https://kit.fontawesome.com/003eff8a7c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <main>
+        <h1>Let's check if data is correct</h1>
+        <div id="data"></div>
+        <div>
+            <button id="btn">confirm</button>
+        </div>
+    </main>
+
+    <script>
+        const json = localStorage.getItem('registerfile');
+        const obj = JSON.parse(json)
+
+        for (key in obj) {
+            const markup = '<div><span>${key}: ${obj[key]}</span ></div > ';
+
+            document.getElementById('data').innerHTML += markup;
+        }
+   
+    </script>
+</body>
+</html>
